@@ -4,7 +4,7 @@ public class Main3 {
 
     public static void main(String[] args) {
         System.out.println("before sdk3 get instance!");
-       SDK3 sdk3 = SDK3.getinstance();
+       SDK3 sdk3 = SDK3.getinstance(2);
 
 
 //        Obj obj = sdk.init();
@@ -14,7 +14,7 @@ public class Main3 {
         sdk3.methodSDK2();
         System.out.println("=====================================================================");
         System.out.println("before sdk4 get instance!");
-        SDK3 sdk4 = SDK3.getinstance();
+        SDK3 sdk4 = SDK3.getinstance(3);
         sdk4.methodSDK();
         sdk4.methodSDK2();
 

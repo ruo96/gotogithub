@@ -7,25 +7,26 @@ public class SDK3 {
     private static Obj obj = null;
     private static SDK3 sdk3 = null;
 
-    private static Obj init(){
-        System.out.println(" come into init!!!");
+    private static Obj init(int i){
+        System.out.println("INIT i is : " + i);
+        System.out.println(" come into INIT!!!");
         Obj obj = new Obj();
         return obj;
     }
 
-    private SDK3(){
-        obj = init();
+    private SDK3(int i){
+        obj = init(i);
     }
 
-    public static SDK3 getinstance(){
-        System.out.println("sdk3 get instance !!!");
+    public static SDK3 getinstance(int i){
+        System.out.println("sdk3 get instance !!! i is : " + i);
         if (  null == obj){
-            System.out.println("sdk3 get instance level 2!!!");
-            synchronized (Obj.class) {
-                if(null == obj)
-                    System.out.println("sdk3 get instance level 3!!!");
-                    sdk3 = new SDK3();
-                return sdk3;
+            System.out.println("sdk3 get instance level 2!!! i is : " + i);
+            synchronized (SDK3.class) {
+                if(null == obj){
+                    System.out.println("sdk3 get instance level 3!!! i is : " + i);
+                    sdk3 = new SDK3(i);
+                return sdk3;}
             }
         }
 
